@@ -1,93 +1,188 @@
-package com.example.lastday;
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
-/**
- * The package name above should NOT be copied, leave the package name as it is.
- * Copy everything below this comment.
- */
-
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
-
-/**
- * This app displays an order form to order coffee.
- */
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    /**
-     * This method is called when the order button is clicked.
-     */
-
-    int scoreTeamA = 0;
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
-    public void a_plus_1(View view) {
-        scoreTeamA = scoreTeamA + 1;
-        display(scoreTeamA);
-    }
-
-    public void a_plus_5(View view) {
-        scoreTeamA = scoreTeamA + 5;
-        display(scoreTeamA);
-    }
-
-    public void a_minus_1(View view) {
-        scoreTeamA = scoreTeamA - 1;
-        display(scoreTeamA);
-    }
-
-    public void a_minus_5(View view) {
-        scoreTeamA = scoreTeamA - 5;
-        display(scoreTeamA);
-    }
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
 
-    int scoreTeamB = 0;
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:text="Team A"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/team_a_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="56sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="a_plus_5"
+                android:text="+5"
+                android:textSize="18sp" />
 
 
-    public void b_plus_1(View view) {
-        scoreTeamB = scoreTeamB + 1;
-        displayB(scoreTeamB);
-    }
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="a_plus_1"
+                android:text="+1"
+                android:textSize="18sp" />
 
-    public void b_plus_5(View view) {
-        scoreTeamB = scoreTeamB + 5;
-        displayB(scoreTeamB);
-    }
 
-    public void b_minus_1(View view) {
-        scoreTeamB = scoreTeamB - 1;
-        displayB(scoreTeamB);
-    }
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="a_minus_1"
+                android:text="-1"
+                android:textSize="18sp" />
 
-    public void b_minus_5(View view) {
-        scoreTeamB = scoreTeamB - 5;
-        displayB(scoreTeamB);
-    }
 
-    /**
-     * This method displays the given quantity value on the screen.
-     */
-    private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.team_a_score);
-        quantityTextView.setText("" + number);
-    }
-    private void displayB(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.team_b_score);
-        quantityTextView.setText("" + number);
-    }
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="a_minus_5"
+                android:text="-5"
+                android:textSize="18sp" />
 
-    public void resetScore (View view) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
-        display(scoreTeamA);
-        displayB(scoreTeamB);
-    }
-}
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:text="Team B"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="56sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="b_plus_5"
+                android:text="+5"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="b_plus_1"
+                android:text="+1"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="b_minus_1"
+                android:text="-1"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="b_minus_5"
+                android:text="-5"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:onClick="resetScore"
+
+
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+STYLE.XML
+
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF004D</item>
+        <item name="colorPrimaryDark">#FF004D</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">#FF004D</item>
+
+    </style>
+
+</resources>
